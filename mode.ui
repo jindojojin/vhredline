@@ -25,6 +25,11 @@
    </item>
    <item row="1" column="1">
     <widget class="QPushButton" name="back_btn">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
      <property name="text">
       <string>Quay lại</string>
      </property>
@@ -32,6 +37,11 @@
    </item>
    <item row="1" column="2">
     <widget class="QPushButton" name="next_btn">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
      <property name="text">
       <string>Tiếp theo</string>
      </property>
@@ -52,6 +62,11 @@
    </item>
    <item row="1" column="0">
     <widget class="QLabel" name="path">
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
      <property name="text">
       <string/>
      </property>

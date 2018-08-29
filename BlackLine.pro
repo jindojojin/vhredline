@@ -18,7 +18,8 @@ SOURCES += main.cpp\
     group.cpp \
     tab.cpp \
     checkbox.cpp \
-    mode.cpp
+    mode.cpp \
+    workingstatus.cpp
 
 HEADERS  += \
     scriptcreator.h \
@@ -28,12 +29,14 @@ HEADERS  += \
     group.h \
     tab.h \
     checkbox.h \
-    mode.h
+    mode.h \
+    workingstatus.h
 
 FORMS    += \
     mainwindow.ui \
     mode.ui \
-    tab.ui
+    tab.ui \
+    workingstatus.ui
 
 RESOURCES +=
 
@@ -47,6 +50,9 @@ OTHER_FILES += \
     rsc/memory.xml \
     rsc/disk.xml \
     rsc/ramBackup.xml
+
+
+
 
 
 

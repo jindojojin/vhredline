@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mode.ui'
 **
-** Created: Wed Aug 29 19:47:37 2018
+** Created: Wed Aug 29 21:55:54 2018
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -50,11 +50,15 @@ public:
 
     back_btn = new QPushButton(Mode);
     back_btn->setObjectName(QString::fromUtf8("back_btn"));
+    QFont font1;
+    font1.setPointSize(10);
+    back_btn->setFont(font1);
 
     gridLayout->addWidget(back_btn, 1, 1, 1, 1);
 
     next_btn = new QPushButton(Mode);
     next_btn->setObjectName(QString::fromUtf8("next_btn"));
+    next_btn->setFont(font1);
 
     gridLayout->addWidget(next_btn, 1, 2, 1, 1);
 
@@ -64,6 +68,9 @@ public:
 
     path = new QLabel(Mode);
     path->setObjectName(QString::fromUtf8("path"));
+    QFont font2;
+    font2.setPointSize(11);
+    path->setFont(font2);
 
     gridLayout->addWidget(path, 1, 0, 1, 1);
 

@@ -8,10 +8,12 @@ INPUT(
 ./release\tab.o
 ./release\checkbox.o
 ./release\mode.o
+./release\workingstatus.o
 ./release\moc_runnerman.o
 ./release\moc_mainwindow.o
 ./release\moc_group.o
 ./release\moc_tab.o
 ./release\moc_checkbox.o
 ./release\moc_mode.o
+./release\moc_workingstatus.o
 );

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mode.h'
 **
-** Created: Wed Aug 29 18:54:23 2018
+** Created: Wed Aug 29 22:42:13 2018
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,15 +23,20 @@ static const uint qt_meta_data_Mode[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+       2,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
+
+ // slots: signature, parameters, type, tag, flags
+       6,    5,    5,    5, 0x08,
+      28,    5,    5,    5, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_Mode[] = {
-    "Mode\0"
+    "Mode\0\0on_next_btn_clicked()\0"
+    "on_back_btn_clicked()\0"
 };
 
 const QMetaObject Mode::staticMetaObject = {
@@ -57,6 +62,13 @@ int Mode::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     _id = QWidget::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: on_next_btn_clicked(); break;
+        case 1: on_back_btn_clicked(); break;
+        }
+        _id -= 2;
+    }
     return _id;
 }
 QT_END_MOC_NAMESPACE

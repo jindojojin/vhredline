@@ -8,10 +8,12 @@ INPUT(
 ./debug\tab.o
 ./debug\checkbox.o
 ./debug\mode.o
+./debug\workingstatus.o
 ./debug\moc_runnerman.o
 ./debug\moc_mainwindow.o
 ./debug\moc_group.o
 ./debug\moc_tab.o
 ./debug\moc_checkbox.o
 ./debug\moc_mode.o
+./debug\moc_workingstatus.o
 );

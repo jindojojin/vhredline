@@ -22,14 +22,19 @@ public:
     void setGuiName(QString);
     int getID();
     void setID(int);
-    void initMode();
     void update();
+private slots:
+    void on_next_btn_clicked();
+    void on_back_btn_clicked();
+
 private:
     Ui::Mode *ui;
     QList<Tab*> listTab;
     int id;
     QString xmlName;
     QString guiName;
+    bool isFolderSet;
+    QString currentFolder;
 };
 
 #endif // MODE_H
