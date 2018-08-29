@@ -1,10 +1,10 @@
 #include <QtGui/QApplication>
-#include "blackline.h"
 #include "runnerman.h"
+#include "mainwindow.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    BlackLine w;
+    Mainwindow w;
     w.show();
     RunnerMan * r = new RunnerMan();
     QThread * xagt = new QThread();

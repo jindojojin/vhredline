@@ -11,20 +11,31 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        blackline.cpp \
     scriptcreator.cpp \
     runningthread.cpp \
-    runnerman.cpp
+    runnerman.cpp \
+    mainwindow.cpp \
+    group.cpp \
+    tab.cpp \
+    checkbox.cpp \
+    mode.cpp
 
-HEADERS  += blackline.h \
+HEADERS  += \
     scriptcreator.h \
     runningthread.h \
-    runnerman.h
+    runnerman.h \
+    mainwindow.h \
+    group.h \
+    tab.h \
+    checkbox.h \
+    mode.h
 
-FORMS    += blackline.ui
+FORMS    += \
+    mainwindow.ui \
+    mode.ui \
+    tab.ui
 
-RESOURCES += \
-    img.qrc
+RESOURCES +=
 
 OTHER_FILES += \
     rsc/auto.xml \
@@ -36,6 +47,23 @@ OTHER_FILES += \
     rsc/memory.xml \
     rsc/disk.xml \
     rsc/ramBackup.xml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
