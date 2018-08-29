@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Tue Aug 28 19:42:19 2018
+** Created: Wed Aug 29 19:28:15 2018
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -29,12 +29,12 @@ public:
     QWidget *widget;
     QGridLayout *gridLayout_2;
     QStackedWidget *listMode;
-    QSpacerItem *horizontalSpacer_6;
-    QSpacerItem *horizontalSpacer_5;
+    QGridLayout *listBtn;
+    QSpacerItem *horizontalSpacer_3;
     QSpacerItem *horizontalSpacer_4;
     QSpacerItem *horizontalSpacer;
-    QSpacerItem *horizontalSpacer_3;
-    QGridLayout *listBtn;
+    QSpacerItem *horizontalSpacer_5;
+    QSpacerItem *horizontalSpacer_6;
 
     void setupUi(QWidget *Mainwindow)
     {
@@ -55,13 +55,16 @@ public:
 
     gridLayout_2->addWidget(listMode, 1, 1, 4, 9);
 
-    horizontalSpacer_6 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    listBtn = new QGridLayout();
+    listBtn->setSpacing(0);
+    listBtn->setObjectName(QString::fromUtf8("listBtn"));
+    listBtn->setContentsMargins(-1, -1, 0, -1);
 
-    gridLayout_2->addItem(horizontalSpacer_6, 0, 0, 1, 1);
+    gridLayout_2->addLayout(listBtn, 1, 0, 4, 1);
 
-    horizontalSpacer_5 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    horizontalSpacer_3 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    gridLayout_2->addItem(horizontalSpacer_5, 0, 3, 1, 1);
+    gridLayout_2->addItem(horizontalSpacer_3, 0, 6, 1, 1);
 
     horizontalSpacer_4 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -71,17 +74,16 @@ public:
 
     gridLayout_2->addItem(horizontalSpacer, 0, 4, 1, 1);
 
-    horizontalSpacer_3 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    horizontalSpacer_5 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    gridLayout_2->addItem(horizontalSpacer_3, 0, 6, 1, 1);
+    gridLayout_2->addItem(horizontalSpacer_5, 0, 3, 1, 1);
 
-    listBtn = new QGridLayout();
-    listBtn->setObjectName(QString::fromUtf8("listBtn"));
+    horizontalSpacer_6 = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    gridLayout_2->addLayout(listBtn, 1, 0, 4, 1);
+    gridLayout_2->addItem(horizontalSpacer_6, 0, 0, 1, 1);
 
 
-    gridLayout->addWidget(widget, 1, 0, 1, 1);
+    gridLayout->addWidget(widget, 0, 0, 2, 1);
 
 
     gridLayout_3->addLayout(gridLayout, 0, 0, 1, 1);

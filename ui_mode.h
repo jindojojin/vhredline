@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mode.ui'
 **
-** Created: Wed Aug 29 14:00:31 2018
+** Created: Wed Aug 29 19:47:37 2018
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -28,10 +28,10 @@ class Ui_Mode
 public:
     QGridLayout *gridLayout;
     QTabWidget *tabWidget;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QLabel *label;
+    QPushButton *back_btn;
+    QPushButton *next_btn;
     QSpacerItem *horizontalSpacer;
+    QLabel *path;
 
     void setupUi(QWidget *Mode)
     {
@@ -42,27 +42,30 @@ public:
     gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
     tabWidget = new QTabWidget(Mode);
     tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
+    QFont font;
+    font.setPointSize(14);
+    tabWidget->setFont(font);
 
     gridLayout->addWidget(tabWidget, 0, 0, 1, 3);
 
-    pushButton = new QPushButton(Mode);
-    pushButton->setObjectName(QString::fromUtf8("pushButton"));
+    back_btn = new QPushButton(Mode);
+    back_btn->setObjectName(QString::fromUtf8("back_btn"));
 
-    gridLayout->addWidget(pushButton, 1, 1, 1, 1);
+    gridLayout->addWidget(back_btn, 1, 1, 1, 1);
 
-    pushButton_2 = new QPushButton(Mode);
-    pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+    next_btn = new QPushButton(Mode);
+    next_btn->setObjectName(QString::fromUtf8("next_btn"));
 
-    gridLayout->addWidget(pushButton_2, 1, 2, 1, 1);
-
-    label = new QLabel(Mode);
-    label->setObjectName(QString::fromUtf8("label"));
-
-    gridLayout->addWidget(label, 1, 0, 1, 1);
+    gridLayout->addWidget(next_btn, 1, 2, 1, 1);
 
     horizontalSpacer = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
     gridLayout->addItem(horizontalSpacer, 2, 0, 1, 1);
+
+    path = new QLabel(Mode);
+    path->setObjectName(QString::fromUtf8("path"));
+
+    gridLayout->addWidget(path, 1, 0, 1, 1);
 
 
     retranslateUi(Mode);
@@ -73,9 +76,9 @@ public:
     void retranslateUi(QWidget *Mode)
     {
     Mode->setWindowTitle(QApplication::translate("Mode", "Form", 0, QApplication::UnicodeUTF8));
-    pushButton->setText(QApplication::translate("Mode", "Quay l\341\272\241i", 0, QApplication::UnicodeUTF8));
-    pushButton_2->setText(QApplication::translate("Mode", "Ti\341\272\277p theo", 0, QApplication::UnicodeUTF8));
-    label->setText(QApplication::translate("Mode", "TextLabel", 0, QApplication::UnicodeUTF8));
+    back_btn->setText(QApplication::translate("Mode", "Quay l\341\272\241i", 0, QApplication::UnicodeUTF8));
+    next_btn->setText(QApplication::translate("Mode", "Ti\341\272\277p theo", 0, QApplication::UnicodeUTF8));
+    path->setText(QString());
     Q_UNUSED(Mode);
     } // retranslateUi
 

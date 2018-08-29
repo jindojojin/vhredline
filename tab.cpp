@@ -65,6 +65,7 @@ void Tab::showGroup(int modeID){
                 chBox->setText(checkbox->getGuiName());
                 chBox->setChecked(checkbox->isChecked(modeID));
                 chBox->setStyleSheet("margin-left:15");
+                chBox->setFont(QFont("MS Shell Dlg 2",12,-1,false));
                 vbox->addWidget(chBox);
             }
         }

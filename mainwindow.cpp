@@ -41,6 +41,10 @@ void Mainwindow::initMode(){
         this->ui->listMode->addWidget(mode);
         QPushButton *btn = new QPushButton();
         btn->setText(mode->getGuiName());
+//        btn->setStyleSheet("font:30");
+        btn->setFixedHeight(150);
+        btn->setFont(QFont("MS Shell Dlg 2",20,2,false));
+        btn->setStyleSheet("QPushButton:pressed{background-color:green}");
         this->ui->listBtn->addWidget(btn);
         QSignalMapper *mapper= new QSignalMapper();
         mapper->setMapping(btn,mode->getID());
