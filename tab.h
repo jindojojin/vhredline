@@ -27,7 +27,8 @@ public:
         int getTabID();
         void setTabID(int);
          QList<Group*> listGroup;
-         void showGroup();
+         void showGroup(int);
+
 
 private:
     Ui::Tab *ui;

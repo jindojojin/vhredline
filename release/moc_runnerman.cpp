@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'runnerman.h'
 **
-** Created: Wed Aug 29 13:41:39 2018
+** Created: Wed Aug 29 18:54:21 2018
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!

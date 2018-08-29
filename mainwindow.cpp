@@ -38,12 +38,8 @@ Mainwindow::~Mainwindow()
 void Mainwindow::initMode(){
     //add group to Tab
     foreach(Mode *mode, this->listMode){        
-//        mode->initMode();
-//        this->ui->listMode->addWidget(mode);
         this->ui->listMode->addWidget(mode);
-//        mode->show();
         QPushButton *btn = new QPushButton();
-//        btn->setFont(QFont("Arial",40,-1,true));
         btn->setText(mode->getGuiName());
         this->ui->listBtn->addWidget(btn);
         QSignalMapper *mapper= new QSignalMapper();
@@ -51,24 +47,13 @@ void Mainwindow::initMode(){
         connect(btn,SIGNAL(clicked()),mapper,SLOT(map()));
         connect(mapper,SIGNAL(mapped(int)),this,SLOT(changeMode(int)));
     }
-    foreach(Tab *tab,this->listTab){
-        tab->showGroup();
-        qDebug()<<"tab"<<tab->getGuiName()<<" show in "<<tab->isShowOnMode(0);
-    }
     listMode[0]->update();
 }
 void Mainwindow::changeMode(int modeID){
-    int id=0;
-
-    foreach(Mode *mode,this->listMode){
-        if(mode->getID()== modeID){
-            id = this->ui->listMode->indexOf(mode);
-            break;
-        }
-    }
-    this->ui->listMode->setCurrentIndex(modeID);
+    if(this->ui->listMode->currentIndex() == modeID) return;
     this->listMode[modeID]->update();
     qDebug()<<"da chuyen mode"<<modeID;
+    this->ui->listMode->setCurrentIndex(modeID);
 }
 
 void Mainwindow::readDefaultMode(){

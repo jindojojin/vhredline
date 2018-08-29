@@ -53,15 +53,12 @@ void Mode::initMode(){
 }
 void Mode::update(){
     this->ui->tabWidget->clear();
-        foreach(Tab *tab,this->listTab){
+    foreach(Tab *tab,this->listTab){
+        qDebug()<<tab->getGuiName();
+        if(tab->isShowOnMode(this->id)){
+            this->ui->tabWidget->addTab(tab,tab->getGuiName());
             qDebug()<<tab->getGuiName();
-            if(tab->isShowOnMode(this->id)){
-                this->ui->tabWidget->addTab(tab,tab->getGuiName());
-                qDebug()<<tab->getGuiName();
-                foreach(Group *group, tab->listGroup){
-//                    tab->showGroup();
-                    qDebug()<<tab->listGroup;
-                }
-            }
+            tab->showGroup(this->id);
         }
+    }
 }

@@ -52,21 +52,25 @@ bool Tab::isShowOnMode(int modeID){
     }
     return false;
 }
-void Tab::showGroup(){
+void Tab::showGroup(int modeID){
+    delete this->ui->scrollAreaWidgetContents_2->layout();
+    QGridLayout *layout= new QGridLayout();
     foreach(Group* group, this->listGroup){
         QGroupBox *groupBox = new QGroupBox();
         groupBox->setTitle(group->getGuiName());
         QVBoxLayout *vbox = new QVBoxLayout();
         foreach(Checkbox *checkbox, group->listCheckBox){
-            if(checkbox->isShow(this->id)){
+            if(checkbox->isShow(modeID)){
                 QCheckBox *chBox= new QCheckBox();
                 chBox->setText(checkbox->getGuiName());
-                chBox->setChecked(checkbox->isChecked(this->id));
+                chBox->setChecked(checkbox->isChecked(modeID));
+                chBox->setStyleSheet("margin-left:15");
                 vbox->addWidget(chBox);
             }
         }
-        vbox->addStretch(1);
+        groupBox->setCheckable(true);
         groupBox->setLayout(vbox);
-        this->ui->gridLayout_2->addWidget(groupBox);
+        layout->addWidget(groupBox);
     }
+    this->ui->scrollAreaWidgetContents_2->setLayout(layout);
 }
