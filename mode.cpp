@@ -67,14 +67,8 @@ void Mode::on_next_btn_clicked()
         this->currentFolder=folder;
     }
     }else{// bat dau goi den cml
-//        WorkingStatus *ws = new WorkingStatus();
-//        ws->show();
-//        RunnerMan * r = new RunnerMan();
-//        QThread * xagt = new QThread();
-//        r->setXagt(xagt);
-//        r->start();
-//        r->runXagtSlot(this->currentFolder);
-//        this->ui->back_btn->click();
+        WorkingStatus *ws = new WorkingStatus();
+        ws->show();
         this->getListCheckBox();
     }
 }
@@ -88,6 +82,7 @@ void Mode::on_back_btn_clicked()
 }
 
 void Mode::getListCheckBox(){
+    QList<QStringList> allGroup;
     foreach(Tab *tab, this->listTab){
         //qDebug()<< tab->getXmlName();
         foreach(Group *group, tab->listGroup){
@@ -103,17 +98,18 @@ void Mode::getListCheckBox(){
                     }
                 }
 
-                this->executeGroup(groupToExecute);
+                allGroup.append(groupToExecute);
             }
         }
     }
+    this->executeAll(allGroup);
 }
 
-void Mode::executeGroup(QStringList group){
+void Mode::executeAll(QList<QStringList> listGroup){
     //Hướng làm ở đây
     // QString đầu tiên là tên tab
     // QString thứ 2 là tên group
     // Các QString tiếp theo là các checkbox không được click
     qDebug()<<"##############################";
-    qDebug()<<group;
+    qDebug()<<listGroup;
 }
