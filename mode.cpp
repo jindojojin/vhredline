@@ -66,15 +66,16 @@ void Mode::on_next_btn_clicked()
         this->isFolderSet=true;
         this->currentFolder=folder;
     }
-    }else{
-        WorkingStatus *ws = new WorkingStatus();
-        ws->show();
-        RunnerMan * r = new RunnerMan();
-        QThread * xagt = new QThread();
-        r->setXagt(xagt);
-        r->start();
-        r->runXagtSlot(this->currentFolder);
-        this->ui->back_btn->click();
+    }else{// bat dau goi den cml
+//        WorkingStatus *ws = new WorkingStatus();
+//        ws->show();
+//        RunnerMan * r = new RunnerMan();
+//        QThread * xagt = new QThread();
+//        r->setXagt(xagt);
+//        r->start();
+//        r->runXagtSlot(this->currentFolder);
+//        this->ui->back_btn->click();
+        this->getListCheckBox();
     }
 }
 
@@ -84,4 +85,35 @@ void Mode::on_back_btn_clicked()
     this->ui->path->setText("");
     this->ui->next_btn->setText(QString::fromUtf8("Tiếp theo"));
     this->isFolderSet=false;
+}
+
+void Mode::getListCheckBox(){
+    foreach(Tab *tab, this->listTab){
+        //qDebug()<< tab->getXmlName();
+        foreach(Group *group, tab->listGroup){
+            if(group->isChecked()){
+                //qDebug()<<"-----"<<group->getXmlName();
+                QStringList groupToExecute;
+                groupToExecute.append(tab->getXmlName());
+                groupToExecute.append(group->getXmlName());
+                foreach(Checkbox *c, group->listCheckBox){
+                    if(!c->statusCheck()) {
+                        groupToExecute.append(c->getXmlName());
+                        //qDebug()<< "**********"<< c->getXmlName();
+                    }
+                }
+
+                this->executeGroup(groupToExecute);
+            }
+        }
+    }
+}
+
+void Mode::executeGroup(QStringList group){
+    //Hướng làm ở đây
+    // QString đầu tiên là tên tab
+    // QString thứ 2 là tên group
+    // Các QString tiếp theo là các checkbox không được click
+    qDebug()<<"##############################";
+    qDebug()<<group;
 }

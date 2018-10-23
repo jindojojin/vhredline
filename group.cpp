@@ -10,6 +10,13 @@ QString Group::getGuiName(){
 QString Group::getXmlName(){
     return this->xmlName;
 }
+bool Group::isChecked(){
+    return this->checked;
+}
+void Group::setChecked(bool x){
+    this->checked=x;
+}
+
 void Group::setGuiName(QString name){
     this->guiName = name;
 }

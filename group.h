@@ -12,6 +12,8 @@ public:
     void addCheckBox(Checkbox *);
     QString getXmlName();
     QString getGuiName();
+    bool isChecked();
+
     void setXmlName(QString);
     void setGuiName(QString);
     void setTabID(int);
@@ -21,10 +23,12 @@ public:
 private:
     QString xmlName;
     QString guiName;
+    bool checked;
     int tabID;
 signals:
 
 public slots:
+    void setChecked(bool);
 
 };
 

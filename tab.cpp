@@ -59,11 +59,15 @@ void Tab::showGroup(int modeID){
         QGroupBox *groupBox = new QGroupBox();
         groupBox->setTitle(group->getGuiName());
         QVBoxLayout *vbox = new QVBoxLayout();
+        group->setChecked(true);// gan gia tri khoi tao
+        connect(groupBox,SIGNAL(toggled(bool)),group,SLOT(setChecked(bool)));// neu check trong gui thì c?p nh?p tr?ng thái c?a groupbox
         foreach(Checkbox *checkbox, group->listCheckBox){
             if(checkbox->isShow(modeID)){
                 QCheckBox *chBox= new QCheckBox();
+                connect(chBox,SIGNAL(toggled(bool)),checkbox,SLOT(check(bool)));
                 chBox->setText(checkbox->getGuiName());
                 chBox->setChecked(checkbox->isChecked(modeID));
+                checkbox->check(checkbox->isChecked(modeID));// gan gia tri khoi tao de goi luc sau
                 chBox->setStyleSheet("margin-left:15");
                 chBox->setFont(QFont("MS Shell Dlg 2",12,-1,false));
                 vbox->addWidget(chBox);

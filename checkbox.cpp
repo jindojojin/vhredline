@@ -42,3 +42,11 @@ void Checkbox::setShowOnMode(QString string){
         this->showOnMode.append(number.toInt());
     }
 }
+
+bool Checkbox::statusCheck(){
+    return this->status;
+}
+
+void Checkbox::check(bool x){
+    this->status=x;
+}
