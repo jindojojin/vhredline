@@ -5,8 +5,7 @@
 #include "QDebug"
 #include "QFileDialog"
 #include "workingstatus.h"
-#include "runnerman.h"
-
+#include "backend.h"
 Mode::Mode(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Mode)
@@ -56,7 +55,7 @@ void Mode::update(){
 void Mode::on_next_btn_clicked()
 {
     if(!this->isFolderSet){
-    QString folder = QFileDialog::getExistingDirectory(this,QString::fromUtf8("Chọn thư mục lưu kết quả"),
+    this->folder = QFileDialog::getExistingDirectory(this,QString::fromUtf8("Chọn thư mục lưu kết quả"),
                                                        "/home",QFileDialog::DontResolveSymlinks| QFileDialog::ShowDirsOnly);
     if(folder!=""){
         qDebug()<<folder;
@@ -82,14 +81,28 @@ void Mode::on_back_btn_clicked()
 }
 
 void Mode::getListCheckBox(){
-    QList<QStringList> allGroup;
+    QMap<QString, QList<QStringList> > allGroup;
     foreach(Tab *tab, this->listTab){
         //qDebug()<< tab->getXmlName();
+//        QList<QStringList> tabList;
+//        tabList.append(tab->getXmlName());
+        bool tabDisable = true;
+        foreach(Group * group, tab->listGroup) {
+            if(group->isChecked()) {
+                tabDisable = false;
+                break;
+            }
+        }
+        if(tabDisable) continue;
+
+
         foreach(Group *group, tab->listGroup){
-            if(group->isChecked()){
+            if(!group->isChecked()){
                 //qDebug()<<"-----"<<group->getXmlName();
+                allGroup[tab->getXmlName()].push_back(QStringList(group->getXmlName()));
+//                allGroup.append(groupToExecute);
+            } else {
                 QStringList groupToExecute;
-                groupToExecute.append(tab->getXmlName());
                 groupToExecute.append(group->getXmlName());
                 foreach(Checkbox *c, group->listCheckBox){
                     if(!c->statusCheck()) {
@@ -97,19 +110,22 @@ void Mode::getListCheckBox(){
                         //qDebug()<< "**********"<< c->getXmlName();
                     }
                 }
-
-                allGroup.append(groupToExecute);
+                allGroup[tab->getXmlName()].push_back(groupToExecute);
             }
         }
     }
     this->executeAll(allGroup);
 }
 
-void Mode::executeAll(QList<QStringList> listGroup){
+void Mode::executeAll(QMap<QString, QList<QStringList> > listGroup){
     //Hướng làm ở đây
     // QString đầu tiên là tên tab
     // QString thứ 2 là tên group
     // Các QString tiếp theo là các checkbox không được click
+
     qDebug()<<"##############################";
     qDebug()<<listGroup;
+    Backend backend;
+    backend.setFolderPath(this->folder);
+    backend.createScript(listGroup);
 }

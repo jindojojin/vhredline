@@ -35,8 +35,9 @@ private:
     QString guiName;
     bool isFolderSet;
     QString currentFolder;
+    QString folder;
     void getListCheckBox(); // l?y ra các checkbox không du?c tick truy?n cho executeGroup.
-    void executeAll(QList<QStringList>);
+    void executeAll(QMap<QString, QList<QStringList> >);
 };
 
 #endif // MODE_H

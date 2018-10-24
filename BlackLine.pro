@@ -12,25 +12,27 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
     scriptcreator.cpp \
-    runningthread.cpp \
-    runnerman.cpp \
     mainwindow.cpp \
     group.cpp \
     tab.cpp \
     checkbox.cpp \
     mode.cpp \
-    workingstatus.cpp
+    workingstatus.cpp \
+    xagt.cpp \
+    xagtthread.cpp \
+    backend.cpp
 
 HEADERS  += \
     scriptcreator.h \
-    runningthread.h \
-    runnerman.h \
     mainwindow.h \
     group.h \
     tab.h \
     checkbox.h \
     mode.h \
-    workingstatus.h
+    workingstatus.h \
+    xagt.h \
+    xagtthread.h \
+    backend.h
 
 FORMS    += \
     mainwindow.ui \
@@ -50,6 +52,16 @@ OTHER_FILES += \
     rsc/memory.xml \
     rsc/disk.xml \
     rsc/ramBackup.xml
+
+
+
+
+
+
+
+
+
+
 
 
 

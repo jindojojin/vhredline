@@ -1,15 +1,15 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'runnerman.h'
+** Meta object code from reading C++ file 'xagtthread.h'
 **
-** Created: Tue Oct 23 22:04:20 2018
+** Created: Wed Oct 24 12:15:06 2018
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../runnerman.h"
+#include "../xagtthread.h"
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'runnerman.h' doesn't include <QObject>."
+#error "The header file 'xagtthread.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 59
 #error "This file was generated using the moc from 4.4.0. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -17,54 +17,56 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-static const uint qt_meta_data_RunnerMan[] = {
+static const uint qt_meta_data_XagtThread[] = {
 
  // content:
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   10, // methods
+       2,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
  // slots: signature, parameters, type, tag, flags
-      22,   11,   10,   10, 0x0a,
+      12,   11,   11,   11, 0x0a,
+      18,   11,   11,   11, 0x0a,
 
        0        // eod
 };
 
-static const char qt_meta_stringdata_RunnerMan[] = {
-    "RunnerMan\0\0folderPath\0runXagtSlot(QString)\0"
+static const char qt_meta_stringdata_XagtThread[] = {
+    "XagtThread\0\0ter()\0restart()\0"
 };
 
-const QMetaObject RunnerMan::staticMetaObject = {
-    { &QThread::staticMetaObject, qt_meta_stringdata_RunnerMan,
-      qt_meta_data_RunnerMan, 0 }
+const QMetaObject XagtThread::staticMetaObject = {
+    { &QThread::staticMetaObject, qt_meta_stringdata_XagtThread,
+      qt_meta_data_XagtThread, 0 }
 };
 
-const QMetaObject *RunnerMan::metaObject() const
+const QMetaObject *XagtThread::metaObject() const
 {
     return &staticMetaObject;
 }
 
-void *RunnerMan::qt_metacast(const char *_clname)
+void *XagtThread::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_RunnerMan))
-	return static_cast<void*>(const_cast< RunnerMan*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_XagtThread))
+	return static_cast<void*>(const_cast< XagtThread*>(this));
     return QThread::qt_metacast(_clname);
 }
 
-int RunnerMan::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int XagtThread::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QThread::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: runXagtSlot((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 0: ter(); break;
+        case 1: restart(); break;
         }
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }

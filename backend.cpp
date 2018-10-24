@@ -1,22 +1,18 @@
-#include "scriptcreator.h"
+#include "backend.h"
 
-//#include <QDebug>
-ScriptCreator::ScriptCreator(QObject *parent) :
+Backend::Backend(QObject *parent) :
     QObject(parent)
 {
-//    XagtThread * thread = new XagtThread();
-//    thread->start();
-//    xagt = new Xagt();
-//    xagt->moveToThread(thread);
-//    QObject::connect(this, SIGNAL(runXagt(QString)),xagt,SLOT(run(QString)));
+        XagtThread * thread = new XagtThread();
+        thread->start();
+        xagt = new Xagt();
+        xagt->moveToThread(thread);
+        QObject::connect(this, SIGNAL(runXagt(QString)),xagt,SLOT(run(QString)));
 }
-/*
-  // Ham dung de chinh sua script
-  // @conf:
-  */
-void ScriptCreator::createScript(QMap<QString, QList<QStringList> > con) {
+
+void Backend::createScript(QMap<QString, QList<QStringList> > con) {
     QMap<QString, QList<QStringList> >::iterator i = con.begin();
-    while(i++ != con.end()) {
+    while(i != con.end()) {
         this->copyScript( i.key()+ ".xml");
         QFile file(this->folderPath + "/temp.xml");
         file.open(QIODevice::ReadWrite);
@@ -47,12 +43,13 @@ void ScriptCreator::createScript(QMap<QString, QList<QStringList> > con) {
 
 
 
-        //emit this->runXagt(this->folderPath);
+        emit this->runXagt(this->folderPath);
 
 
 
-
+        i++;
     }
+   // QFile::remove(this->folderPath + "/temp.xml");
 
 
 //    for(int i=0; i<con.count(); i++) {
@@ -86,12 +83,7 @@ void ScriptCreator::createScript(QMap<QString, QList<QStringList> > con) {
 //        newFile.close();
 //    }
 }
-
-/*
-// ham de copy file xml vao thu muc luu ket qua
-// @source: duong dan den file xml
-*/
-void ScriptCreator::copyScript(QString source) {
+void Backend::copyScript(QString source){
     QString des = this->folderPath + "/temp.xml";
     QString src = "./rsc/" + source;
     if (QFile::exists(des))
@@ -101,16 +93,10 @@ void ScriptCreator::copyScript(QString source) {
 
     QFile::copy(src, des);
 }
-void ScriptCreator::setFolderPath(QString fld) {
+void Backend::setFolderPath(QString fld){
     this->folderPath = fld;
 }
-/*
-// ham de set 1 param thanh false
-// @doc: cay dom can sua
-// @name: ten param
-// @index: trong th co nhieu param cung ten, index la param minh chon
-*/
-void ScriptCreator:: setParamFalse(QDomDocument & doc,const QString & name) {
+void Backend::setParamFalse(QDomDocument &doc, const QString &name){
     qDebug() << "~~~~~~~~~~~~~~~~~~~~~~~~~";
     qDebug() << name;
     QDomNodeList list = doc.elementsByTagName("param");
@@ -120,14 +106,9 @@ void ScriptCreator:: setParamFalse(QDomDocument & doc,const QString & name) {
             e.firstChild().firstChild().toText().setData("false");
         }
     }
-
 }
-/*
-  // ham dung de xoa 1 module theo ten cua no
-  // @doc: xml can xoa
-  // @ moduleName: ten module can xoa
-  */
-void ScriptCreator::deleteCmdByModule(QDomDocument & doc,const QString moduleName){
+
+void Backend::deleteCmdByModule(QDomDocument &doc, const QString moduleName) {
     QDomNodeList list = doc.elementsByTagName("module");
     for(int i=0; i<list.length(); i++) {
         QDomElement node = list.item(i).toElement();
@@ -138,4 +119,3 @@ void ScriptCreator::deleteCmdByModule(QDomDocument & doc,const QString moduleNam
         }
     }
 }
-

@@ -1,5 +1,4 @@
 #include <QtGui/QApplication>
-#include "runnerman.h"
 #include "mainwindow.h"
 int main(int argc, char *argv[])
 {

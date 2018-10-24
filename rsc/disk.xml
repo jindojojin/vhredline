@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<script xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="urn:uuid:f7d2dc56-7c75-4554-9f60-da556bb6f41b" chaining="implicit">
+<script xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="urn:uuid:55c0bcfd-5b28-45ed-9c9e-be5d96c059b3" chaining="implicit">
   <commands>
-    <command xsi:type="ExecuteModuleCommand" id="urn:uuid:a8dda695-2ebe-45c9-ab4a-865657bb0f93">
+    <command xsi:type="ExecuteModuleCommand" id="urn:uuid:1ae08b0e-3561-4ed3-a142-b07951771b8f">
       <module name="w32disks" version="1.4.36.0" />
       <config xsi:type="ParameterListModuleConfig">
         <parameters>
@@ -12,7 +12,7 @@
       </config>
       <filters />
     </command>
-    <command xsi:type="ExecuteModuleCommand" id="urn:uuid:ec5c1572-d68c-467d-a518-c56fc3b71f72">
+    <command xsi:type="ExecuteModuleCommand" id="urn:uuid:57d4f724-3428-40af-be60-107035fd5c83">
       <module name="w32apifiles" version="1.4.36.0" />
       <config xsi:type="ParameterListModuleConfig">
         <parameters>
@@ -91,7 +91,7 @@
       </config>
       <filters />
     </command>
-    <command xsi:type="ExecuteModuleCommand" id="urn:uuid:75c53ec8-49c8-413c-b2e6-30633808ca12">
+    <command xsi:type="ExecuteModuleCommand" id="urn:uuid:2fb43b05-3529-4d47-9adb-60d6eff535ae">
       <module name="w32volumes" version="1.4.36.0" />
       <config xsi:type="ParameterListModuleConfig">
         <parameters>
