@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'tab.h'
 **
-** Created: Wed Oct 24 12:15:01 2018
+** Created: Tue Nov 13 13:55:04 2018
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,15 +23,18 @@ static const uint qt_meta_data_Tab[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+       1,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
+
+ // slots: signature, parameters, type, tag, flags
+       5,    4,    4,    4, 0x0a,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_Tab[] = {
-    "Tab\0"
+    "Tab\0\0testGroupBoxWork(bool)\0"
 };
 
 const QMetaObject Tab::staticMetaObject = {
@@ -57,6 +60,12 @@ int Tab::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     _id = QWidget::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: testGroupBoxWork((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        }
+        _id -= 1;
+    }
     return _id;
 }
 QT_END_MOC_NAMESPACE

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'backend.h'
 **
-** Created: Wed Oct 24 12:30:40 2018
+** Created: Tue Nov 13 13:55:07 2018
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!

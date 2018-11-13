@@ -99,7 +99,7 @@ void Mode::getListCheckBox(){
         foreach(Group *group, tab->listGroup){
             if(!group->isChecked()){
                 //qDebug()<<"-----"<<group->getXmlName();
-                allGroup[tab->getXmlName()].push_back(QStringList(group->getXmlName()));
+                //allGroup[tab->getXmlName()].push_back(QStringList(group->getXmlName()));
 //                allGroup.append(groupToExecute);
             } else {
                 QStringList groupToExecute;

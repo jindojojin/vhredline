@@ -36,6 +36,9 @@ private:
     QString guiName;
     QList<int> showOnMode;
     int id;
+
+public slots:
+    void testGroupBoxWork(bool);
 };
 
 #endif // TAB_H

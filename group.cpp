@@ -1,5 +1,5 @@
 #include "group.h"
-
+#include "QDebug"
 Group::Group(QObject *parent) :
     QObject(parent)
 {
@@ -14,6 +14,7 @@ bool Group::isChecked(){
     return this->checked;
 }
 void Group::setChecked(bool x){
+    qDebug()<<"da check"<<x;
     this->checked=x;
 }
 

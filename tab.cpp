@@ -61,6 +61,7 @@ void Tab::showGroup(int modeID){
         QVBoxLayout *vbox = new QVBoxLayout();
         group->setChecked(true);// gan gia tri khoi tao
         connect(groupBox,SIGNAL(toggled(bool)),group,SLOT(setChecked(bool)));// neu check trong gui thì c?p nh?p tr?ng thái c?a groupbox
+        //connect(groupBox,SIGNAL(toggled(bool)),this,SLOT(testGroupBoxWork(bool)));
         foreach(Checkbox *checkbox, group->listCheckBox){
             if(checkbox->isShow(modeID)){
                 QCheckBox *chBox= new QCheckBox();
@@ -78,4 +79,8 @@ void Tab::showGroup(int modeID){
         layout->addWidget(groupBox);
     }
     this->ui->scrollAreaWidgetContents_2->setLayout(layout);
+}
+
+void Tab::testGroupBoxWork(bool a){
+    qDebug()<<"da check/uncheck" << a;
 }
