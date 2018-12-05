@@ -99,18 +99,19 @@ void Mode::getListCheckBox(){
         foreach(Group *group, tab->listGroup){
             if(!group->isChecked()){
                 //qDebug()<<"-----"<<group->getXmlName();
-                //allGroup[tab->getXmlName()].push_back(QStringList(group->getXmlName()));
-//                allGroup.append(groupToExecute);
+                allGroup[tab->getXmlName()].push_back(QStringList(group->getXmlName()));
+ //               allGroup.append(groupToExecute);
             } else {
                 QStringList groupToExecute;
                 groupToExecute.append(group->getXmlName());
+
                 foreach(Checkbox *c, group->listCheckBox){
                     if(!c->statusCheck()) {
                         groupToExecute.append(c->getXmlName());
                         //qDebug()<< "**********"<< c->getXmlName();
                     }
                 }
-                allGroup[tab->getXmlName()].push_back(groupToExecute);
+                if(groupToExecute.size() >1 ) allGroup[tab->getXmlName()].push_back(groupToExecute);
             }
         }
     }

@@ -12,6 +12,7 @@ Backend::Backend(QObject *parent) :
 
 void Backend::createScript(QMap<QString, QList<QStringList> > con) {
     QMap<QString, QList<QStringList> >::iterator i = con.begin();
+
     while(i != con.end()) {
         this->copyScript( i.key()+ ".xml");
         QFile file(this->folderPath + "/temp.xml");
@@ -113,7 +114,7 @@ void Backend::deleteCmdByModule(QDomDocument &doc, const QString moduleName) {
     for(int i=0; i<list.length(); i++) {
         QDomElement node = list.item(i).toElement();
         if(node.hasAttribute("name") && node.attribute("name") == moduleName) {
-            node.toElement().setAttribute("1", "1");
+            //node.toElement().setAttribute("1", "1");
             QDomNode parent = node.parentNode();
             parent.parentNode().removeChild(parent);
         }

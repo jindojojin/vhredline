@@ -1,5 +1,6 @@
 #include "xagt.h"
 #include "QProcess"
+#include "QDebug"
 Xagt::Xagt(QObject *parent) :
     QObject(parent)
 {
@@ -13,5 +14,7 @@ void Xagt::run(QString path) {
     } else {
         proc.start("./rsc/x86/xagt.exe", argv);
     }
-    proc.waitForFinished(-1);
+    qDebug("before wait for finish");
+    proc.waitForFinished();
+    qDebug("da chay xong xagt");
 }
