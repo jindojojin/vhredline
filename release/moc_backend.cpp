@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'backend.h'
 **
-** Created: Sun Nov 18 12:00:27 2018
+** Created: Tue Dec 25 09:35:46 2018
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,18 +23,21 @@ static const uint qt_meta_data_Backend[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   10, // methods
+       2,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
  // signals: signature, parameters, type, tag, flags
        9,    8,    8,    8, 0x05,
 
+ // slots: signature, parameters, type, tag, flags
+      26,    8,    8,    8, 0x0a,
+
        0        // eod
 };
 
 static const char qt_meta_stringdata_Backend[] = {
-    "Backend\0\0runXagt(QString)\0"
+    "Backend\0\0runXagt(QString)\0runNextGroup()\0"
 };
 
 const QMetaObject Backend::staticMetaObject = {
@@ -63,8 +66,9 @@ int Backend::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: runXagt((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 1: runNextGroup(); break;
         }
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }

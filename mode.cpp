@@ -128,5 +128,7 @@ void Mode::executeAll(QMap<QString, QList<QStringList> > listGroup){
     qDebug()<<listGroup;
     Backend backend;
     backend.setFolderPath(this->folder);
-    backend.createScript(listGroup);
+    backend.setConf(listGroup);// subtitude for line 132
+//#line 132    backend.createScript(listGroup);
+    backend.runNextGroup();
 }

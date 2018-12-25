@@ -11,7 +11,7 @@ public:
 private:
     bool isRunning;
 signals:
-    bool isFinish();
+    void isFinish();
 public slots:
     void run(QString);
 };

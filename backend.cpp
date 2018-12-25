@@ -8,13 +8,24 @@ Backend::Backend(QObject *parent) :
         xagt = new Xagt();
         xagt->moveToThread(thread);
         QObject::connect(this, SIGNAL(runXagt(QString)),xagt,SLOT(run(QString)));
+        QObject::connect(xagt,SIGNAL(isFinish()),this, SLOT(runNextGroup()));
 }
 
-void Backend::createScript(QMap<QString, QList<QStringList> > con) {
-    QMap<QString, QList<QStringList> >::iterator i = con.begin();
+void Backend::setConf(QMap<QString, QList<QStringList> > conf){
+    this->conf=conf;
+}
 
-    while(i != con.end()) {
+void Backend::runNextGroup(){
+    qDebug()<<"run next group";
+    this->createScript();
+}
+
+void Backend::createScript() {
+    qDebug()<<"Start create script";
+    QMap<QString, QList<QStringList> >::iterator i = this->conf.begin();
+    if(i != this->conf.end()) {
         this->copyScript( i.key()+ ".xml");
+        qDebug()<<"Da bat dau thu thap"+i.key();
         QFile file(this->folderPath + "/temp.xml");
         file.open(QIODevice::ReadWrite);
         QByteArray xmlData(file.readAll());
@@ -41,15 +52,16 @@ void Backend::createScript(QMap<QString, QList<QStringList> > con) {
         doc.save(qts,4);
         newFile.close();
 
-
-
-
         emit this->runXagt(this->folderPath);
 
+//        i++;
+        this->conf.remove(i.key());// subtitude for upper line
+        qDebug()<<this->conf.keys();
+    }else qDebug()<<"Het thu de thu thap";
 
 
-        i++;
-    }
+
+
    // QFile::remove(this->folderPath + "/temp.xml");
 
 

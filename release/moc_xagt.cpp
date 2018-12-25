@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'xagt.h'
 **
-** Created: Sun Nov 18 12:00:25 2018
+** Created: Tue Dec 25 09:35:46 2018
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -28,16 +28,16 @@ static const uint qt_meta_data_Xagt[] = {
        0,    0, // enums/sets
 
  // signals: signature, parameters, type, tag, flags
-      11,    5,    6,    5, 0x05,
+       6,    5,    5,    5, 0x05,
 
  // slots: signature, parameters, type, tag, flags
-      22,    5,    5,    5, 0x0a,
+      17,    5,    5,    5, 0x0a,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_Xagt[] = {
-    "Xagt\0\0bool\0isFinish()\0run(QString)\0"
+    "Xagt\0\0isFinish()\0run(QString)\0"
 };
 
 const QMetaObject Xagt::staticMetaObject = {
@@ -65,8 +65,7 @@ int Xagt::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: { bool _r = isFinish();
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
+        case 0: isFinish(); break;
         case 1: run((*reinterpret_cast< QString(*)>(_a[1]))); break;
         }
         _id -= 2;
@@ -75,11 +74,8 @@ int Xagt::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-bool Xagt::isFinish()
+void Xagt::isFinish()
 {
-    bool _t0;
-    void *_a[] = { const_cast<void*>(reinterpret_cast<const void*>(&_t0)) };
-    QMetaObject::activate(this, &staticMetaObject, 0, _a);
-    return _t0;
+    QMetaObject::activate(this, &staticMetaObject, 0, 0);
 }
 QT_END_MOC_NAMESPACE

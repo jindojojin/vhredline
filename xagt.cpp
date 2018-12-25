@@ -15,6 +15,7 @@ void Xagt::run(QString path) {
         proc.start("./rsc/x86/xagt.exe", argv);
     }
     qDebug("before wait for finish");
-    proc.waitForFinished();
+    proc.waitForFinished(-1);
     qDebug("da chay xong xagt");
+    emit this->isFinish();
 }
