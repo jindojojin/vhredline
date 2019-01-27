@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'xagtthread.h'
 **
-** Created: Sun Nov 18 12:00:26 2018
+** Created: Mon Jan 28 00:22:34 2019
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!

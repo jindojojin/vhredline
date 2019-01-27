@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'group.h'
 **
-** Created: Tue Nov 13 13:55:04 2018
+** Created: Mon Jan 28 00:22:31 2019
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -34,7 +34,7 @@ static const uint qt_meta_data_Group[] = {
 };
 
 static const char qt_meta_stringdata_Group[] = {
-    "Group\0\0setChecked(bool)\0"
+    "Group\0\0check(bool)\0"
 };
 
 const QMetaObject Group::staticMetaObject = {
@@ -62,7 +62,7 @@ int Group::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: setChecked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 0: check((*reinterpret_cast< bool(*)>(_a[1]))); break;
         }
         _id -= 1;
     }

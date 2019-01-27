@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'scriptcreator.h'
 **
-** Created: Tue Dec 25 09:35:45 2018
+** Created: Mon Jan 28 00:22:30 2019
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!

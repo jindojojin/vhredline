@@ -128,10 +128,14 @@ void Mainwindow::analyzeGroup(QString groupData){
     tabID_matcher.indexIn(groupData);
     guiName_matcher.indexIn(groupData);
     xmlName_matcher.indexIn(groupData);
+    showOnMode_matcher.indexIn(groupData);
+    checkedOnMode_matcher.indexIn(groupData);
     checkbox_matcher.indexIn(groupData);
     group->setXmlName(xmlName_matcher.cap(1));
     group->setGuiName(guiName_matcher.cap(1));
     group->setTabID(tabID_matcher.cap(1).toInt());
+    group->setCheckedOnMode(checkedOnMode_matcher.cap(1));
+    group->setShowOnMode(showOnMode_matcher.cap(1));
     int pos=0;
     QStringList list;
     while ((pos = checkbox_matcher.indexIn(groupData, pos)) != -1) {

@@ -17,6 +17,7 @@ public:
     void setConf(QMap<QString, QList<QStringList> > conf);//quang linh fix for line 16
     void createScript();//quang linh fix for line 16
     void setFolderPath(QString fld);
+    Xagt * xagt;
 
 private:
     QString folderPath;
@@ -24,7 +25,6 @@ private:
     QProcess proc;
     QMap<QString, int > group;
     QMap<QString, int > type;
-    Xagt * xagt;
     void setParamFalse(QDomDocument & doc,const QString & name);
     void deleteCmdByModule(QDomDocument & doc,const QString moduleName);
     QMap<QString, QList<QStringList> > conf;// this is list group & checkbox sent from mode.cpp when start collect data

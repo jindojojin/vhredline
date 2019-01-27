@@ -66,8 +66,8 @@ void Mode::on_next_btn_clicked()
         this->currentFolder=folder;
     }
     }else{// bat dau goi den cml
-        WorkingStatus *ws = new WorkingStatus();
-        ws->show();
+//        WorkingStatus *ws = new WorkingStatus();
+//        ws->show();
         this->getListCheckBox();
     }
 }
@@ -88,7 +88,8 @@ void Mode::getListCheckBox(){
 //        tabList.append(tab->getXmlName());
         bool tabDisable = true;
         foreach(Group * group, tab->listGroup) {
-            if(group->isChecked()) {
+            if(group->statusCheck()) {
+                qDebug()<< tab->getGuiName()<<" chứa "<<group->getGuiName();
                 tabDisable = false;
                 break;
             }
@@ -97,9 +98,9 @@ void Mode::getListCheckBox(){
 
 
         foreach(Group *group, tab->listGroup){
-            if(!group->isChecked()){
+            if(!group->statusCheck()){
                 //qDebug()<<"-----"<<group->getXmlName();
-                allGroup[tab->getXmlName()].push_back(QStringList(group->getXmlName()));
+//                allGroup[tab->getXmlName()].push_back(QStringList(group->getXmlName()));
  //               allGroup.append(groupToExecute);
             } else {
                 QStringList groupToExecute;
@@ -111,7 +112,8 @@ void Mode::getListCheckBox(){
                         //qDebug()<< "**********"<< c->getXmlName();
                     }
                 }
-                if(groupToExecute.size() >1 ) allGroup[tab->getXmlName()].push_back(groupToExecute);
+//                if(groupToExecute.size() >1 ) allGroup[tab->getXmlName()].push_back(groupToExecute);
+                 allGroup[tab->getXmlName()].push_back(groupToExecute);
             }
         }
     }

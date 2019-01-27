@@ -5,7 +5,7 @@ Backend::Backend(QObject *parent) :
 {
         XagtThread * thread = new XagtThread();
         thread->start();
-        xagt = new Xagt();
+        this->xagt = new Xagt();
         xagt->moveToThread(thread);
         QObject::connect(this, SIGNAL(runXagt(QString)),xagt,SLOT(run(QString)));
         QObject::connect(xagt,SIGNAL(isFinish()),this, SLOT(runNextGroup()));
@@ -24,8 +24,10 @@ void Backend::createScript() {
     qDebug()<<"Start create script";
     QMap<QString, QList<QStringList> >::iterator i = this->conf.begin();
     if(i != this->conf.end()) {
+        qDebug()<<"Còn l?i"<<this->conf.keys();
         this->copyScript( i.key()+ ".xml");
         qDebug()<<"Da bat dau thu thap"+i.key();
+
         QFile file(this->folderPath + "/temp.xml");
         file.open(QIODevice::ReadWrite);
         QByteArray xmlData(file.readAll());
@@ -56,7 +58,7 @@ void Backend::createScript() {
 
 //        i++;
         this->conf.remove(i.key());// subtitude for upper line
-        qDebug()<<this->conf.keys();
+        qDebug()<<"Còn l?i"<<this->conf.keys();
     }else qDebug()<<"Het thu de thu thap";
 
 

@@ -56,11 +56,13 @@ void Tab::showGroup(int modeID){
     delete this->ui->scrollAreaWidgetContents_2->layout();
     QGridLayout *layout= new QGridLayout();
     foreach(Group* group, this->listGroup){
+        if(!group->isShow(modeID)) continue;
         QGroupBox *groupBox = new QGroupBox();
         groupBox->setTitle(group->getGuiName());
+        groupBox->setChecked(group->isChecked(modeID));
         QVBoxLayout *vbox = new QVBoxLayout();
-        group->setChecked(true);// gan gia tri khoi tao
-        connect(groupBox,SIGNAL(toggled(bool)),group,SLOT(setChecked(bool)));// neu check trong gui thì c?p nh?p tr?ng thái c?a groupbox
+        group->check(group->isChecked(modeID));// gan gia tri khoi tao
+        connect(groupBox,SIGNAL(toggled(bool)),group,SLOT(check(bool)));// neu check trong gui thì c?p nh?p tr?ng thái c?a groupbox
         //connect(groupBox,SIGNAL(toggled(bool)),this,SLOT(testGroupBoxWork(bool)));
         foreach(Checkbox *checkbox, group->listCheckBox){
             if(checkbox->isShow(modeID)){
